@@ -35,4 +35,22 @@ class Array
 
         result
     end
+
+    def my_stock_picker
+        buy_day = 0
+        sell_day = 0
+        profit = 0
+        (0...self.length).each do |i|
+            (i+1...self.length).each do |j|
+                if self[j] - self[i] > profit
+                    profit = self[j] - self[i] 
+                    buy_day = i
+                    sell_day = j
+                end
+            end
+        end
+
+        [buy_day, sell_day]
+    end
 end
+

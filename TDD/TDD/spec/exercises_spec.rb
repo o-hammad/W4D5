@@ -29,3 +29,13 @@ describe "#my_transpose" do
         expect([[0, 1, 2],[3, 4, 5],[6, 7, 8]].my_transpose).to eq([[0, 3, 6],[1, 4, 7],[2, 5, 8]])
     end
 end
+
+describe "#my_stock_picker" do
+    it "should accept an array as an arg" do 
+        expect { [7,2,1,5,0].my_stock_picker }.to_not raise_error
+    end
+
+    it "should return a transposed array" do 
+        expect([7,2,1,5,0].my_stock_picker).to eq([2,3])
+    end 
+end
