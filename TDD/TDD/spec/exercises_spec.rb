@@ -2,12 +2,11 @@ require "rspec"
 require "exercises"
 
 describe "#my_uniq" do
-    let(:result_1) { my_uniq([1, 2, 1, 3, 3]) }
 
-    it "should accept an array" do 
-        result_1
+    it "should accept an array as an arg" do 
+        expect { my_uniq([1, 2, 1, 3, 3]) }.to_not raise_error
     end
-    it "should return a new array" do
-        expect(result_1).to_not be(result_1)
+    it "should return a unique array" do
+        expect( my_uniq([1, 2, 1, 3, 3]) ).to eq([1, 2, 3])
     end
 end
